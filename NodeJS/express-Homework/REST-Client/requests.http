@@ -1,0 +1,9 @@
+POST http://localhost:3002/products
+Content-Type: application/json
+
+
+{
+    "name": "XBOX Original",
+    "price": 1400,
+    "stock": 5
+}

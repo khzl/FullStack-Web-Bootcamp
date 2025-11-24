@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Hub</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- ===== Toggle Dark Mode ===== -->
+    <button id="modeToggle">🌙 Dark Mode</button>
+
+    <!-- ===== Header ===== -->
+    <header>
+      <h1>Welcome to Tech Hub</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="SignIn.html">Sign In</a></li>
+          <li><a href="SignUp.html">Sign Up</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="teams.html">Teams</a></li>
+          <li><a href="TechHub.html">Tech Hub</a></li>
+          <li><a href="whatILearning.html">What I Learning</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-text animate-fade">
+        <h2>Your Gateway to Learning & Innovation</h2>
+        <p>
+          Explore the world of technology with courses, projects, and a
+          supportive community.
+        </p>
+        <a href="courses.html" class="hero-btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- ===== Main Content ===== -->
+    <main>
+      <!-- Section 1 -->
+      <section class="section animate-slide">
+        <h2>Explore Our Offerings</h2>
+        <p>
+          Discover a variety of resources, courses, and community support to
+          enhance your tech skills.
+        </p>
+      </section>
+
+      <!-- Beautiful Cards Section -->
+      <section class="cards-section">
+        <h3 class="animate-zoom">Our Main Features</h3>
+
+        <div class="cards-container">
+          <div class="card animate-fade">
+            <h4>💻 Courses</h4>
+            <p>
+              Learn programming, AI, cybersecurity, and more with detailed
+              tutorials.
+            </p>
+          </div>
+
+          <div class="card animate-fade">
+            <h4>🚀 Projects</h4>
+            <p>
+              Build real-world projects to improve your skills and showcase your
+              talent.
+            </p>
+          </div>
+
+          <div class="card animate-fade">
+            <h4>🌍 Community</h4>
+            <p>Join thousands of learners in a growing tech community.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section animate-slide">
+        <h3>Join the Tech Hub Community</h3>
+        <p>
+          Connect with like-minded individuals, share your projects, and grow
+          together.
+        </p>
+      </section>
+
+      <button class="join-btn animate-zoom">Join Now</button>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <p>&copy; 2025 Tech Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript (Dark Mode + Scroll Animations) -->
+    <script>
+      // Dark mode toggle
+      const toggleBtn = document.getElementById("modeToggle");
+      toggleBtn.onclick = () => {
+        document.body.classList.toggle("dark");
+        toggleBtn.textContent = document.body.classList.contains("dark")
+          ? "☀️ Light Mode"
+          : "🌙 Dark Mode";
+      };
+
+      // Scroll animations
+      const elements = document.querySelectorAll(
+        ".animate-fade, .animate-slide, .animate-zoom"
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
